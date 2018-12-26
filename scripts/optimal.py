@@ -9,6 +9,8 @@ N = int(argv[4])
 num_infections = {}
 for line in gopen(argv[2]):
     u,v,t = line.decode().strip().split('\t')
+    if u == 'None':
+        continue
     if u not in num_infections:
         num_infections[u] = 0
     if float(t) >= T:
