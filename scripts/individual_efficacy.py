@@ -48,6 +48,8 @@ for line in args.individuals:
         l = line.decode().strip()
     else:
         l = line.strip()
+    if l.count('|') == 2: # virus|person|time identifiers
+        l = l.split('|')[1]
     assert l in nodes, "Individual not in transmission network: %s"%l
     user_individuals.append(l); eff[l] = 0
 
