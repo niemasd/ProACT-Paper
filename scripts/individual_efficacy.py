@@ -55,7 +55,7 @@ for line in args.individuals:
 
 # compute number infected
 for u,v,t in trans:
-    if t >= args.from_time and t <= args.to_time and u in user_individuals:
+    if t >= args.from_time and t <= args.to_time and u in eff:
         eff[u] += 1
 for u in user_individuals:
     print('%s\t%d'%(u,eff[u]))
